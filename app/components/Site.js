@@ -5,23 +5,23 @@ const Link = ReactRouter.Link
 
 class Site extends React.Component {
 
-    render() {
+  render() {
 
-        let matchId = parseInt(this.props.match.params.id);
-        let selectedSite = this.props.seitesList.filter(function (site) {
-            if (site.id === matchId)
-                return site;
-        })[0];
+    let matchId = parseInt(this.props.match.params.id);
+    let selectedSite = this.props.seitesList.find(function (site) {
+      if (site.id === matchId)
+        return site;
+    });
 
-        return (
-            <div>
-                {selectedSite &&
-                    <SelectedSite site={selectedSite} />}
+    return (
+      <div>
+        {selectedSite &&
+          <SelectedSite site={selectedSite} />}
 
-                <Link to='/' >close</Link>
-            </div>
-        )
-    }
+        <Link to='/' >close</Link>
+      </div>
+    )
+  }
 }
 
 module.exports = Site;

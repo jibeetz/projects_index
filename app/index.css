@@ -53,3 +53,11 @@ a.active:before {
     width: 150px;
     border-radius: 50%;
 }
+
+#add-site {
+    display: none;
+}
+
+#add-site.open {
+    display: block;
+}
